@@ -19,7 +19,7 @@ if (document.URL.indexOf('www.cancer.gov') != -1 ||
 
 /*
  * Mapping of all WCMS reporting suites
- * Last update: 2015-09-18
+ * Last update: 2016-02-16
  */
 var AllSuites =
 {
@@ -80,7 +80,11 @@ var AllSuites =
         live: 'ncielcancer',
         other: 'ncielcancer-dev'
     },
-
+    'nciogcr-governmentcongressionalrelations': {
+        live: 'nciogcr-governmentcongressionalrelations',
+        other: 'nciogcr-govcongressionalrelations-dev', 
+    },
+	
     /// CCOP suites
     'ncidcp-cancerprevention': {
         live: 'ncidcp-cancerprevention',
