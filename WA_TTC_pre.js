@@ -2,8 +2,8 @@ var wa_production_report_suite = 'ncittc-technologytransfercenter';
 var wa_dev_report_suite = 'ncittc-technologytransfercenter-dev';
 var wa_channel = 'Tech Transfer Center';
 var wa_search_function_name = 'Tech Transfer Center Search';
-var wa_production_url_match = 'ttc.nci.nih.gov';
-var linkInternalFiltersOverride = 'javascript:,ttc.nci.nih.gov,google3.nci.nih.gov';
+var wa_production_url_match = 'techtransfer.cancer.gov';
+var linkInternalFiltersOverride = 'javascript:,techtransfer.cancer.gov';
 var pageNameOverride = location.hostname.toLowerCase() + location.pathname.toLowerCase();
 
 if (document.URL.indexOf(wa_production_url_match) != -1) {
