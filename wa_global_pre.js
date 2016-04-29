@@ -1,6 +1,6 @@
 ﻿/*
 * This is a reusable Web Analytics snippet for sites that only report to the 'nciglobal' suite. 
-* This should be paried with "wa_global_post.js" in the Pageload tag. If the site requires more 
+* This should be paired with "wa_global_post.js" in the Pageload tag. If the site requires more 
 * tracking beyond channel, suite, and search, please create site-specific analytics files for the site.
 */
 var wa_production_report_suite = 'nciglobal';
