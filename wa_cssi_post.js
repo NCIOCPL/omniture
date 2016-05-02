@@ -14,7 +14,7 @@ if (wa_p30 != "")
 if (wa_p44 != "")
 	s.prop44 = wa_p44;
 
-s.hier2= wa_channel + '|' + wa_p30 + '|' + wa_p44;
+s.hier2 = wa_channel + '|' + wa_p30 + '|' + wa_p44;
 
 s.events='event1';
 var s_code=s.t();if(s_code)document.write(s_code);
