@@ -1255,7 +1255,7 @@ var NCIAnalytics = {
     //******************************************************************************************************
     OnThisPageClick: function(sender, linkText, pageName) {
         clickParams = new NCIAnalytics.ClickParams(sender, 'nciglobal', 'o', 'OnThisPageClick');
-		
+
         clickParams.Props = {
             66: linkText,
             67: pageName
@@ -1342,6 +1342,110 @@ var NCIAnalytics = {
         clickParams.LogToOmniture();
     },
 
+    //******************************************************************************************************
+    AccordionClick: function(sender, accordionId, sectionId, name, action) {
+        clickParams = new NCIAnalytics.ClickParams(this, 'nciglobal', 'o', 'LinkTracking');
+
+        var accordionInfo = accordionId;
+        if(sectionId) accordionInfo += ('|' + sectionId);
+        if(name) accordionInfo += ('|' + name);
+        if(action) accordionInfo += ('|' + action);
+        clickParams.Props = {
+            41: accordionInfo
+        };
+        clickParams.LogToOmniture();
+    },
+
+    // Home Page Delighter Click
+    // sender - the element responsible for this event.
+    // type - the delighter type.
+    // value - pageName
+    HomePageDelighterClick: function(sender, type, value) {
+        if( type === 'hp_find'){
+            clickParams = new NCIAnalytics.ClickParams(sender, 'nciglobal', 'o', 'HomePageFindDelighter');
+            clickParams.Props = {
+                5 : 'hp_find ct delighter|' + value
+            };
+            clickParams.LogToOmniture();
+        }
+    },
+
+	// Record that an item in the delighter rail was clicked.
+	// sender - the element responsible for this event.
+	// type - the delighter type.
+	RecordDelighterRailClick: function(sender, type) {
+		var pageName = s.pageName;
+		if( type === 'livehelp'){
+			clickParams = new NCIAnalytics.ClickParams(sender, 'nciglobal', 'o', 'DelighterLiveChat');
+			clickParams.Props = {
+				5 : 'rrail_chat with us|' + pageName
+			};
+			clickParams.LogToOmniture();
+		}
+	},
+
+	// Record that the proactive chat prompt was displayed.
+	// sender - the element responsible for this event.
+	RecordProactiveChatPromptDisplay: function(sender){
+		var pageName = s.pageName;
+		clickParams = new NCIAnalytics.ClickParams(sender, 'nciglobal', 'o', 'ProactiveChat');
+		clickParams.Props = {
+			5 : 'livehelp_proactive chat - display|' + pageName
+		};
+		clickParams.Events = [42];
+		clickParams.LogToOmniture();
+	},
+
+	// Record that the proactive "Chat Now" button was clicked.
+	// sender - the element responsible for this event.
+	RecordProactiveChatPromptClick: function(sender){
+		var pageName = s.pageName;
+		clickParams = new NCIAnalytics.ClickParams(sender, 'nciglobal', 'o', 'ProactiveChat');
+		clickParams.Props = {
+			5 : 'livehelp_proactive chat - launch|' + pageName
+		};
+		clickParams.Events = [44];
+		clickParams.LogToOmniture();
+	},
+
+	// Record that the proactive chat prompt was dismissed.
+	// sender - the element responsible for this event.
+	RecordProactiveChatPromptDismissal: function(sender){
+		var pageName = s.pageName;
+		clickParams = new NCIAnalytics.ClickParams(sender, 'nciglobal', 'o', 'ProactiveChat');
+		clickParams.Props = {
+			5 : 'livehelp_proactive chat - dismiss|' + pageName
+		};
+		clickParams.Events = [43];
+		clickParams.LogToOmniture();
+	},
+
+    /******************************************************************************************************
+	* Track link clicks on CTS pages
+	*/
+	SimpleCTSLink: function(sender, type, value) {
+		clickParams = new NCIAnalytics.ClickParams(sender, 'nciglobal', 'o', 'CTSLink');
+		clickParams.Props = {
+			5: type + '|' + value
+		};
+		clickParams.LogToOmniture();
+	},
+
+    /******************************************************************************************************
+	* Track search result click on CTS Results page
+	*/
+	CTSResultsClick: function(sender, rank) {
+		clickParams = new NCIAnalytics.ClickParams(sender, 'nciglobal', 'o', 'CTSLink');
+		clickParams.Events = [42];
+		clickParams.Props = {
+			12: 'clinicaltrials_basic',
+			13: rank
+		};
+		clickParams.Evars = {
+			12: 'clinicaltrials_basic'
+		};
+		clickParams.LogToOmniture();
+	},
     //******************************************************************************************************
     /* SPLF_Hier1: function() {
      // URL structure
