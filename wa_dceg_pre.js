@@ -7,6 +7,7 @@ var wa_search_function_name = '';
 var wa_production_url_match = '';
 var wa_production_linkInternalFilters = 'javascript:,';
 wa_production_linkInternalFilters += 'aghealth.nih.gov,';
+wa_production_linkInternalFilters += 'analysistools.nci.nih.gov/nevustool,';
 wa_production_linkInternalFilters += 'atbcstudy.cancer.gov,';
 wa_production_linkInternalFilters += 'breastimaging.cancer.gov,';
 wa_production_linkInternalFilters += 'chernobyl.cancer.gov,';
@@ -35,6 +36,12 @@ if (page_URL.indexOf('aghealth.nih.gov') != -1) {
 	wa_channel = 'DCEG - Agricultural Health Study';
 	wa_search_function_name = 'DCEG - Agricultural Health Study - Search';
 	wa_production_url_match = 'aghealth.nih.gov';
+	wa_is_production_report_suite = true;
+}
+else if (page_URL.indexOf('analysistools.nci.nih.gov/nevustool') != -1) {	
+	wa_channel = 'DCEG - Moles to Melanoma';
+	wa_search_function_name = 'DCEG - Moles to Melanoma - Search';
+	wa_production_url_match = 'analysistools.nci.nih.gov/nevustool';
 	wa_is_production_report_suite = true;
 }
 else if (page_URL.indexOf('atbcstudy.cancer.gov') != -1) {	
