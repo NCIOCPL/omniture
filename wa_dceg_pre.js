@@ -1,5 +1,5 @@
 // Sites tagged for DCEG anaytics suite
-// Last updated: 2015-10-20
+// Last updated: 2016-07-11
 var wa_production_report_suite = 'ncidceg-cancerepidemiologyandgenetics';
 var wa_dev_report_suite = 'ncidceg-cancerepidemiologyandgenetics-dev';
 var wa_channel = '';
