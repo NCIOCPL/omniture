@@ -11,6 +11,7 @@ wa_production_linkInternalFilters += 'analysistools.nci.nih.gov/nevustool,';
 wa_production_linkInternalFilters += 'atbcstudy.cancer.gov,';
 wa_production_linkInternalFilters += 'breastimaging.cancer.gov,';
 wa_production_linkInternalFilters += 'chernobyl.cancer.gov,';
+wa_production_linkInternalFilters += 'dceg2.cancer.gov';
 wa_production_linkInternalFilters += 'dietandhealth.cancer.gov,';
 wa_production_linkInternalFilters += 'eagle.cancer.gov,';
 wa_production_linkInternalFilters += 'emblem.cancer.gov,';
@@ -60,6 +61,12 @@ else if (page_URL.indexOf('chernobyl.cancer.gov') != -1) {
 	wa_channel = 'DCEG - Chernobyl';
 	wa_search_function_name = 'DCEG - Chernobyl - Search';
 	wa_production_url_match = 'chernobyl.cancer.gov';
+	wa_is_production_report_suite = true;
+}
+else if (page_URL.indexOf('dceg2.cancer.gov') != -1) {	
+	wa_channel = 'DCEG - Main';
+	wa_search_function_name = 'DCEG - Main - Search';
+	wa_production_url_match = 'dceg2.cancer.gov';
 	wa_is_production_report_suite = true;
 }
 else if (page_URL.indexOf('dietandhealth.cancer.gov') != -1) {	
