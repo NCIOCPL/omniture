@@ -1,5 +1,5 @@
 // Sites tagged for DCEG anaytics suite
-// Last updated: 2015-10-20
+// Last updated: 2016-07-11
 var wa_production_report_suite = 'ncidceg-cancerepidemiologyandgenetics';
 var wa_dev_report_suite = 'ncidceg-cancerepidemiologyandgenetics-dev';
 var wa_channel = '';
@@ -7,9 +7,11 @@ var wa_search_function_name = '';
 var wa_production_url_match = '';
 var wa_production_linkInternalFilters = 'javascript:,';
 wa_production_linkInternalFilters += 'aghealth.nih.gov,';
+wa_production_linkInternalFilters += 'analysistools.nci.nih.gov/nevustool,';
 wa_production_linkInternalFilters += 'atbcstudy.cancer.gov,';
 wa_production_linkInternalFilters += 'breastimaging.cancer.gov,';
 wa_production_linkInternalFilters += 'chernobyl.cancer.gov,';
+wa_production_linkInternalFilters += 'dceg2.cancer.gov';
 wa_production_linkInternalFilters += 'dietandhealth.cancer.gov,';
 wa_production_linkInternalFilters += 'eagle.cancer.gov,';
 wa_production_linkInternalFilters += 'emblem.cancer.gov,';
@@ -37,6 +39,12 @@ if (page_URL.indexOf('aghealth.nih.gov') != -1) {
 	wa_production_url_match = 'aghealth.nih.gov';
 	wa_is_production_report_suite = true;
 }
+else if (page_URL.indexOf('analysistools.nci.nih.gov/nevustool') != -1) {	
+	wa_channel = 'DCEG - Moles to Melanoma';
+	wa_search_function_name = 'DCEG - Moles to Melanoma - Search';
+	wa_production_url_match = 'analysistools.nci.nih.gov/nevustool';
+	wa_is_production_report_suite = true;
+}
 else if (page_URL.indexOf('atbcstudy.cancer.gov') != -1) {	
 	wa_channel = 'DCEG - ATBC Study';
 	wa_search_function_name = 'DCEG - ATBC Study - Search';
@@ -53,6 +61,12 @@ else if (page_URL.indexOf('chernobyl.cancer.gov') != -1) {
 	wa_channel = 'DCEG - Chernobyl';
 	wa_search_function_name = 'DCEG - Chernobyl - Search';
 	wa_production_url_match = 'chernobyl.cancer.gov';
+	wa_is_production_report_suite = true;
+}
+else if (page_URL.indexOf('dceg2.cancer.gov') != -1) {	
+	wa_channel = 'DCEG - Main';
+	wa_search_function_name = 'DCEG - Main - Search';
+	wa_production_url_match = 'dceg2.cancer.gov';
 	wa_is_production_report_suite = true;
 }
 else if (page_URL.indexOf('dietandhealth.cancer.gov') != -1) {	
