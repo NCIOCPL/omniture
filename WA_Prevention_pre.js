@@ -2,19 +2,37 @@ var wa_production_report_suite = 'ncidcp-cancerprevention';
 var wa_dev_report_suite = 'ncidcp-cancerprevention-dev';
 var wa_channel = 'DCP';
 var wa_search_function_name = 'DCP Search';
-var wa_production_url_match = 'dcp.cancer.gov,prevention.cancer.gov';
-var wa_production_linkInternalFilters = 'javascript:,dcp.cancer.gov';
-var wa_dev_linkInternalFilters = 'javascript:,dcpint.cancer.gov';
+var wa_production_url_match = '';
+var currentHostname = location.hostname.toLowerCase();
+var wa_linkInternalFilters = 'javascript:,' + currentHostname;
+var page_URL = document.URL;
 
-//if (document.URL.indexOf(wa_production_url_match) != -1)
-if (wa_production_url_match.indexOf(document.URL) != 0)
-    // production 
-    var s_account=wa_production_report_suite;
-else
-    // non-production
-    var s_account=wa_dev_report_suite;
 
-var pageNameOverride = location.hostname.toLowerCase() + location.pathname.toLowerCase();
-if(pageNameOverride.toLowerCase() == "dcp.cancer.gov/home")
-	pageNameOverride = "dcp.cancer.gov/";
-	
+// Set channel, search name, and prod URL 
+if (page_URL.indexOf('dcp.cancer.gov') != -1) {    
+    wa_production_url_match = 'dcp.cancer.gov';
+}
+else if (page_URL.indexOf('glycomics.cancer.gov') != -1) {    
+    wa_channel = 'DCP - Glycomics';
+    wa_search_function_name = 'DCP - Glycomics - Search';
+    wa_production_url_match = 'glycomics.cancer.gov';
+}
+else if (page_URL.indexOf('prevention.cancer.gov') != -1) {    
+    wa_production_url_match = 'prevention.cancer.gov';
+}
+else {
+    wa_channel = 'DCP - other';
+}
+
+
+// Set Prod or Dev suite depending on URL
+if (page_URL.indexOf(wa_production_url_match) != -1 && wa_production_url_match.length > 0) {
+    var s_account = wa_production_report_suite;
+}
+else {
+    var s_account = wa_dev_report_suite;
+}
+var pageNameOverride = currentHostname + location.pathname.toLowerCase();
+if(pageNameOverride.toLowerCase() == "dcp.cancer.gov/home") {
+    pageNameOverride = "dcp.cancer.gov/";
+}
