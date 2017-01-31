@@ -1540,7 +1540,8 @@ var NCIAnalytics = {
         if( type === 'hp_find'){
             clickParams = new NCIAnalytics.ClickParams(sender, 'nciglobal', 'o', 'HomePageFindDelighter');
             clickParams.Props = {
-                5 : 'hp_find ct delighter|' + value
+                5 : 'hp_find ct delighter|' + value,
+				66 : 'delighter_findclinicaltrials'
             };
             clickParams.LogToOmniture();
         }
@@ -1628,15 +1629,20 @@ var NCIAnalytics = {
 	* sender - the element responsible for this event
 	* rank - the position of the selected item on a given page
 	*/
-	CTSResultsClick: function(sender, rank) {
+	CTSResultsClick: function(sender, rank, custom) {
+        var type = 'clinicaltrials_basic';
+        if(custom) {
+            type = 'clinicaltrials_custom';
+        }
+        
 		clickParams = new NCIAnalytics.ClickParams(sender, 'nciglobal', 'o', 'CTSLink');
 		clickParams.Events = [42];
 		clickParams.Props = {
-			12: 'clinicaltrials_basic',
+			12: type,
 			13: rank
 		};
 		clickParams.Evars = {
-			12: 'clinicaltrials_basic'
+			12: type
 		};
 		clickParams.LogToOmniture();
 	},

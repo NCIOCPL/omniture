@@ -344,9 +344,8 @@ if(typeof NCIAnalytics !== 'undefined') {
     }
 }
 
-/** Custom functions to track screen size changes */
-var viewPortLoaded = s.eVar5 = getViewPort(); // Set eVar for browser width on page load
-window.onresize = trackViewPortResize; // If the current browser screen is resized, call the trackViewPortResize() function
+/* Set eVar for browser width on page load */
+s.eVar5 = getViewPort(); 
  
 /* Set a name for the view port based on the current screen size */
 function getViewPort() {
@@ -361,18 +360,19 @@ function getViewPort() {
 	return screen;
 }
 
-/* If the screen is resized past a different breakpoint, track the variable and event */
-function trackViewPortResize() {
-	var viewPortResized = getViewPort();
-	if (viewPortLoaded != viewPortResized) {
-		if(typeof NCIAnalytics !== 'undefined') {
-			if(typeof NCIAnalytics.Resize === 'function') {
-				NCIAnalytics.Resize(this,viewPortResized);
-			}
-		}
-		viewPortLoaded = viewPortResized;
-	}
-	return viewPortResized;
+/* Track initial load of basic and advanced search pages */
+var path = location.pathname;
+function endsWith(str, suffix) {
+  return str.indexOf(suffix, str.length - suffix.length) !== -1;
+}
+if(endsWith(path,'/')) {
+  path = path.substring(0, path.length-1);
+}
+if(endsWith(path,'clinical-trials/search')) {
+  s.prop62 = s.eVar62 = 'Clinical Trials: Basic';
+}
+else if(endsWith(path,'clinical-trials/advanced-search')) {
+  s.prop62 = s.eVar62 = 'Clinical Trials: Advanced';
 }
 
 /************************** PLUGINS SECTION *************************/
