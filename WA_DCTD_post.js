@@ -1,9 +1,7 @@
-if (document.URL.indexOf(wa_production_url_match) != -1)
-    // production 
-    s.linkInternalFilters = wa_production_linkInternalFilters;
-else 
-    // non-production
-    s.linkInternalFilters = wa_dev_linkInternalFilters;
+/*
+* Web Analytics functions snippet for DCTD sites
+*/
+s.linkInternalFilters = wa_linkInternalFilters;
 
 s.channel=wa_channel;
 s.events='event1';
