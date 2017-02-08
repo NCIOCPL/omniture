@@ -154,13 +154,39 @@ s.prop26 = now.getFullYear() + "|" + (now.getMonth() + 1) + "|" + now.getDate() 
 
 /* Plugin Config */
 s.usePlugins=true
+
+/* Add calls to plugins here */
 function s_doPlugins(s) {
-	/* Add calls to plugins here */
-	
-	s.prop15=s.eVar15=s.getQueryParam('protocolsearchid');
-	s.eVar35=s.getQueryParam('cid');
-	s.campaign=s.getQueryParam('cid'); //change cid to actual query parameter
-	s.campaign=s.getValOnce(s.campaign,'s_campaign',30);
+
+    /* Set 'protoclsearchid' value */
+    s.prop15=s.eVar15=s.getQueryParam('protocolsearchid');
+
+    /* Set the campagin value if there are any matching queries in the URL*/
+    var sCampaign;
+    var hasUtm = false;
+    var utmArr = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'];
+    var utmJoin  = [];
+    sCampaign = s.getQueryParam('cid');
+    if (!sCampaign) {
+        sCampaign = s.getQueryParam('gclid');
+        if (!sCampaign) {
+            for (i = 0; i < utmArr.length; i++) {
+                val = s.getQueryParam(utmArr[i]); 
+                if(val) {
+                    hasUtm = true;
+                }
+                else {
+                    val = '_';
+                }
+                utmJoin.push(val);
+            }
+            if(hasUtm) {
+                sCampaign = utmJoin.join('|');
+            }
+        }
+    }
+    s.eVar35 = sCampaign;
+    s.campaign = s.getValOnce(sCampaign,'s_campaign',30);
 
     /* Force Custom Variables to Lower Case */
     //s.prop6 = makeLowerCase(s.prop6);

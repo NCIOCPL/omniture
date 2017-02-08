@@ -28,10 +28,25 @@ s.linkTrackEvents="None";
 s.useForcedLinkTracking=true
 s.forcedLinkTrackingTimeout=750
 
+//time parting configuration 
+//US
+s._tpDST = {
+2012:'3/11,11/4',
+2013:'3/10,11/3',
+2014:'3/9,11/2',
+2015:'3/8,11/1',
+2016:'3/13,11/6',
+2017:'3/12,11/5',
+2018:'3/11,11/4',
+2019:'3/10,11/3'}
+
 // If the cid query parameter exists - set prop16 and eVar16 to value of cid
 var cdrid = caseInsensitiveGetQueryParm('cdrid');
 if(cdrid)
-    s.prop16=s.eVar16=cdrid; 
+    s.prop16=s.eVar16=cdrid;
+
+//set the font size variable
+s.prop42="Normal";
 
 // Domain override
 var localPageName = location.hostname.toLowerCase() + location.pathname.toLowerCase();
@@ -153,13 +168,39 @@ s.prop26 = now.getFullYear() + "|" + (now.getMonth() + 1) + "|" + now.getDate() 
 
 /* Plugin Config */
 s.usePlugins=true
+
+/* Add calls to plugins here */
 function s_doPlugins(s) {
-	/* Add calls to plugins here */
-	
-	s.prop15=s.eVar15=s.getQueryParam('protocolsearchid');
-	s.eVar35=s.getQueryParam('cid');
-	s.campaign=s.getQueryParam('cid'); //change cid to actual query parameter
-	s.campaign=s.getValOnce(s.campaign,'s_campaign',30);
+
+    /* Set 'protoclsearchid' value */
+    s.prop15=s.eVar15=s.getQueryParam('protocolsearchid');
+
+    /* Set the campagin value if there are any matching queries in the URL*/
+    var sCampaign;
+    var hasUtm = false;
+    var utmArr = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'];
+    var utmJoin  = [];
+    sCampaign = s.getQueryParam('cid');
+    if (!sCampaign) {
+        sCampaign = s.getQueryParam('gclid');
+        if (!sCampaign) {
+            for (i = 0; i < utmArr.length; i++) {
+                val = s.getQueryParam(utmArr[i]); 
+                if(val) {
+                    hasUtm = true;
+                }
+                else {
+                    val = '_';
+                }
+                utmJoin.push(val);
+            }
+            if(hasUtm) {
+                sCampaign = utmJoin.join('|');
+            }
+        }
+    }
+    s.eVar35 = sCampaign;
+    s.campaign = s.getValOnce(sCampaign,'s_campaign',30);
 
     /* Force Custom Variables to Lower Case */
     //s.prop6 = makeLowerCase(s.prop6);
@@ -197,6 +238,21 @@ function s_doPlugins(s) {
     s.prop61 = s.getPreviousValue(s.pageName, 'gpv_pn', "");
     //s.prop61=s.getPreviousValue(s.pageName,'gpv_pn','event1');
 
+	// Set the variables for the time parting ('n' for northern hemisphere, '-5" for EST) and set to prop29 for time parting
+	var tp = s.getTimeParting('n','-5');
+	s.prop29 = tp;
+
+	// Set prop64 for percent page viewed - if 0, then set to 'zero'
+	s.prop64=s.getPercentPageViewed();
+	s.prop64=(s.prop64=="0") ? "zero" : s.prop64;
+
+	// Set prop65 to get the initial load time of the page (for use in the page load speed plugin)
+	var loadTime = s_getLoadTime();
+	s.prop65 = loadTime;
+    if(s.events && s.events.length > 0){
+        s.events += ",";
+    }
+    s.events += ["event47=" +  loadTime];
 }
 s.doPlugins=s_doPlugins	
 
@@ -281,6 +337,44 @@ function set_hier1() {
 /* Dynamically Capture Hierarchy Variable via Custom Plugin */
 s.hier1 = set_hier1();
 
+/* Track scroll percentage of previous page / percent visible on current page */
+if(typeof NCIAnalytics !== 'undefined') {
+    if(typeof NCIAnalytics.cookieRead === 'function') {
+        s.prop48=NCIAnalytics.cookieRead("nci_scroll");
+    }
+}
+
+/* Set eVar for browser width on page load */
+s.eVar5 = getViewPort(); 
+ 
+/* Set a name for the view port based on the current screen size */
+function getViewPort() {
+	var screen = '';
+	if(window.innerWidth)
+	{
+		if (window.innerWidth > 1440) { screen = "Extra wide"; }
+		else if (window.innerWidth > 1024) { screen = "Desktop"; }
+		else if (window.innerWidth > 640) { screen = "Tablet"; }
+		else { screen = "Mobile"; }
+	}
+	return screen;
+}
+
+/* Track initial load of basic and advanced search pages */
+var path = location.pathname;
+function endsWith(str, suffix) {
+  return str.indexOf(suffix, str.length - suffix.length) !== -1;
+}
+if(endsWith(path,'/')) {
+  path = path.substring(0, path.length-1);
+}
+if(endsWith(path,'clinical-trials/search')) {
+  s.prop62 = s.eVar62 = 'Clinical Trials: Basic';
+}
+else if(endsWith(path,'clinical-trials/advanced-search')) {
+  s.prop62 = s.eVar62 = 'Clinical Trials: Advanced';
+}
+
 /************************** PLUGINS SECTION *************************/
 /* You may insert any plugins you wish to use here.                 */
 /*
@@ -306,6 +400,63 @@ s.getValOnce=new Function("v","c","e",""
 +"var s=this,a=new Date,v=v?v:v='',c=c?c:c='s_gvo',e=e?e:0,k=s.c_r(c"
 +");if(v){a.setTime(a.getTime()+e*86400000);s.c_w(c,v,e?a:0);}return"
 +" v==k?'':v");
+
+/*
+ * Copyright 2011-2013 Adobe Systems, Inc.
+ * s_getLoadTime v1.36 - Get page load time in units of 1/10 seconds
+ */
+function s_getLoadTime()
+{
+	if(!window.s_loadT)
+	{
+		var b=new Date().getTime(),o=window.performance?performance.timing:0,a=o?o.requestStart:window.inHeadTS||0;s_loadT=a?Math.round((b-a)/100):''
+	}
+	return s_loadT
+}
+
+/*
+ * Plugin: getTimeParting 3.4
+ */
+s.getTimeParting=new Function("h","z",""
++"var s=this,od;od=new Date('1/1/2000');if(od.getDay()!=6||od.getMont"
++"h()!=0){return'Data Not Available';}else{var H,M,D,U,ds,de,tm,da=['"
++"Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturda"
++"y'],d=new Date();z=z?z:0;z=parseFloat(z);if(s._tpDST){var dso=s._tp"
++"DST[d.getFullYear()].split(/,/);ds=new Date(dso[0]+'/'+d.getFullYea"
++"r());de=new Date(dso[1]+'/'+d.getFullYear());if(h=='n'&&d>ds&&d<de)"
++"{z=z+1;}else if(h=='s'&&(d>de||d<ds)){z=z+1;}}d=d.getTime()+(d.getT"
++"imezoneOffset()*60000);d=new Date(d+(3600000*z));H=d.getHours();M=d"
++".getMinutes();M=(M<10)?'0'+M:M;D=d.getDay();U=' AM';if(H>=12){U=' P"
++"M';H=H-12;}if(H==0){H=12;}D=da[D];tm=H+':'+M+U;return(tm+'|'+D);}");
+
+/*
+* Plugin: getPercentPageViewed v1.x
+* This code has been modified from the original version distributed
+* by Omniture and will not be supported by Omniture in any way
+*/
+s.getPercentPageViewed=new Function("",""
++"var s=this;if(typeof(s.linkType)=='undefined'||s.linkType=='e'){var"
++" v=s.c_r('s_ppv');s.c_w('s_ppv',0);return v;}");
+s.getPPVCalc=new Function("",""
++"var dh=Math.max(Math.max(s.d.body.scrollHeight,s.d.documentElement."
++"scrollHeight),Math.max(s.d.body.offsetHeight,s.d.documentElement.of"
++"fsetHeight),Math.max(s.d.body.clientHeight,s.d.documentElement.clie"
++"ntHeight)),vph=s.d.clientHeight||Math.min(s.d.documentElement.clien"
++"tHeight,s.d.body.clientHeight),st=s.wd.pageYOffset||(s.wd.document."
++"documentElement.scrollTop||s.wd.document.body.scrollTop),vh=st+vph,"
++"pv=Math.round(vh/dh*100),cv=s.c_r('s_ppv'),cpi=cv.indexOf('|'),cpv="
++"'',ps='';if(cpi!=-1){cpv=cv.substring(0,cpi);ps=parseInt(cv.substri"
++"ng(cpi+1));}else{cpv=ps=0;}if(pv<=100){if(pv>parseInt(cpv)){ps=pv-M"
++"ath.round(vph/dh*100);s.c_w('s_ppv',pv+'|'+ps);}}else{s.c_w('s_ppv'"
++",'');}");
+s.getPPVSetup=new Function("",""
++"var s=this;if(s.wd.addEventListener){s.wd.addEventListener('load',s"
++".getPPVCalc,false);s.wd.addEventListener('scroll',s.getPPVCalc,fals"
++"e);s.wd.addEventListener('resize',s.getPPVCalc,false);}else if(s.wd"
++".attachEvent){s.wd.attachEvent('onload',s.getPPVCalc);s.wd.attachEv"
++"ent('onscroll',s.getPPVCalc);s.wd.attachEvent('onresize',s.getPPVCa"
++"lc);}");
+s.getPPVSetup();
 
 /******************************
  * Plugin: socialPlatforms v1.0
