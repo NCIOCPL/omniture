@@ -1,10 +1,7 @@
-// Version 2.1
-if (wa_is_production_report_suite)
-    // production 
-    s.linkInternalFilters = wa_production_linkInternalFilters;
-else 
-    // non-production
-    s.linkInternalFilters = wa_dev_linkInternalFilters;
+/*
+* Web Analytics functions snippet for CSSI sites
+*/
+s.linkInternalFilters = wa_linkInternalFilters;
 
 s.channel=wa_channel;
 
