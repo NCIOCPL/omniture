@@ -1,5 +1,5 @@
 // Version 2.1
-// Last updated: 04-21-2015
+// Last updated: 03-20-2017
 var wa_production_report_suite = 'ncidccps-cancercontrolpopulationsciences';
 var wa_dev_report_suite = 'ncidccps-cancercontrolpopulationsci-dev';
 var wa_channel = ''; 
@@ -55,7 +55,7 @@ var wa_is_production_report_suite = false;
 var wa_p30 = "";
 var wa_p44 = "";
 var wa_hier2 = "";
-var page_URL = document.URL;
+var page_URL = document.URL.toLowerCase();
 
 
 if (page_URL.indexOf('appliedresearch.cancer.gov/icsn') != -1) {	
@@ -97,7 +97,7 @@ else if (page_URL.indexOf('cancercontrol.cancer.gov/brp') != -1) {
 else if (page_URL.indexOf('staffprofiles.cancer.gov/brp') != -1) {	
 	wa_channel = 'DCCPS - BRP';
 	wa_search_function_name = 'DCCPS - BRP - Search';
-	wa_production_url_match = 'cancercontrol.cancer.gov/brp';
+	wa_production_url_match = 'staffprofiles.cancer.gov/brp';
 	wa_is_production_report_suite = true;
 	wa_p30 = 'Behavioral Research Main';
 	wa_p44 = 'BRP Staff and Grantee Profiles';
