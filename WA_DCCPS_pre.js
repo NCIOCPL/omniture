@@ -1,5 +1,5 @@
 // Version 2.1
-// Last updated: 04-21-2015
+// Last updated: 03-20-2017
 var wa_production_report_suite = 'ncidccps-cancercontrolpopulationsciences';
 var wa_dev_report_suite = 'ncidccps-cancercontrolpopulationsci-dev';
 var wa_channel = ''; 
@@ -49,13 +49,16 @@ wa_production_linkInternalFilters += 'training.seer.cancer.gov,';
 wa_production_linkInternalFilters += 'intranet.cancer.gov/dccps';
 wa_production_linkInternalFilters += 'dietassessmentprimer.cancer.gov';
 wa_production_linkInternalFilters += 'knowyourchances.cancer.gov';
+wa_production_linkInternalFilters += 'ratecalc.cancer.gov';
+wa_production_linkInternalFilters += 'rtips.cancer.gov';
+wa_production_linkInternalFilters += 'sbir-cancercontrol.cancer.gov';
 
 var wa_dev_linkInternalFilters = 'javascript:'; 
 var wa_is_production_report_suite = false;
 var wa_p30 = "";
 var wa_p44 = "";
 var wa_hier2 = "";
-var page_URL = document.URL;
+var page_URL = document.URL.toLowerCase();
 
 
 if (page_URL.indexOf('appliedresearch.cancer.gov/icsn') != -1) {	
@@ -97,7 +100,7 @@ else if (page_URL.indexOf('cancercontrol.cancer.gov/brp') != -1) {
 else if (page_URL.indexOf('staffprofiles.cancer.gov/brp') != -1) {	
 	wa_channel = 'DCCPS - BRP';
 	wa_search_function_name = 'DCCPS - BRP - Search';
-	wa_production_url_match = 'cancercontrol.cancer.gov/brp';
+	wa_production_url_match = 'staffprofiles.cancer.gov/brp';
 	wa_is_production_report_suite = true;
 	wa_p30 = 'Behavioral Research Main';
 	wa_p44 = 'BRP Staff and Grantee Profiles';
@@ -381,6 +384,26 @@ else if (page_URL.indexOf('knowyourchances.cancer.gov') != -1) {
 	wa_is_production_report_suite = true;
 	wa_p30 = 'Know Your Chances';
 	wa_p44 = 'Know Your Chances'; 
+}
+else if (page_URL.indexOf('ratecalc.cancer.gov') != -1) {	
+	wa_channel = 'DCCPS - Cancer Mortality Maps Rate Calc.';
+	wa_production_url_match = 'ratecalc.cancer.gov';
+	wa_is_production_report_suite = true;
+	wa_p30 = 'Cancer Mortality Maps Rate Calc.';
+}
+else if (page_URL.indexOf('rtips.cancer.gov') != -1) {	
+	wa_channel = 'DCCPS - IS';
+	wa_search_function_name = 'DCCPS - IS - Search';
+	wa_production_url_match = 'rtips.cancer.gov';
+	wa_is_production_report_suite = true;
+	wa_p30 = 'Research Tested Intervention Programs (RTIPS)';
+}
+else if (page_URL.indexOf('sbir-cancercontrol.cancer.gov') != -1) {	
+	wa_channel = 'DCCPS - SBIR';
+	wa_search_function_name = 'DCCPS - SBIR - Search';
+	wa_production_url_match = 'sbir-cancercontrol.cancer.gov';
+	wa_is_production_report_suite = true;
+	wa_p30 = 'SBIR Cancer Control';
 }
 else {
 	wa_channel = 'DCCPS - Development';
