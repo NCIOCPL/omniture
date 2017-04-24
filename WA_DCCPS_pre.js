@@ -46,12 +46,13 @@ wa_production_linkInternalFilters += 'progressreport.cancer.gov,';
 wa_production_linkInternalFilters += 'publications.nci.nih.gov,';
 wa_production_linkInternalFilters += 'seer.cancer.gov,';
 wa_production_linkInternalFilters += 'training.seer.cancer.gov,';
-wa_production_linkInternalFilters += 'intranet.cancer.gov/dccps';
-wa_production_linkInternalFilters += 'dietassessmentprimer.cancer.gov';
-wa_production_linkInternalFilters += 'knowyourchances.cancer.gov';
-wa_production_linkInternalFilters += 'ratecalc.cancer.gov';
-wa_production_linkInternalFilters += 'rtips.cancer.gov';
-wa_production_linkInternalFilters += 'sbir-cancercontrol.cancer.gov';
+wa_production_linkInternalFilters += 'intranet.cancer.gov/dccps,';
+wa_production_linkInternalFilters += 'dietassessmentprimer.cancer.gov,';
+wa_production_linkInternalFilters += 'knowyourchances.cancer.gov,';
+wa_production_linkInternalFilters += 'ratecalc.cancer.gov,';
+wa_production_linkInternalFilters += 'rtips.cancer.gov,';
+wa_production_linkInternalFilters += 'sbir-cancercontrol.cancer.gov,';
+wa_production_linkInternalFilters += 'survivorship.cancer.gov';
 
 var wa_dev_linkInternalFilters = 'javascript:'; 
 var wa_is_production_report_suite = false;
@@ -404,6 +405,13 @@ else if (page_URL.indexOf('sbir-cancercontrol.cancer.gov') != -1) {
 	wa_production_url_match = 'sbir-cancercontrol.cancer.gov';
 	wa_is_production_report_suite = true;
 	wa_p30 = 'SBIR Cancer Control';
+}
+else if (page_URL.indexOf('survivorship.cancer.gov') != -1) {	
+	wa_channel = 'DCCPS - BRP';
+	wa_search_function_name = 'DCCPS - BRP - Search';
+	wa_production_url_match = 'survivorship.cancer.gov';
+	wa_is_production_report_suite = true;
+	wa_p30 = 'Survivorship';
 }
 else {
 	wa_channel = 'DCCPS - Development';
