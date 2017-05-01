@@ -1954,7 +1954,7 @@ NCIAnalytics.buildPageDetail = function() {
         return_val = '';
 
     // find name of current pdq section
-    hash = hash.replace(/#?(section|link)\//g, '');
+    hash = hash.replace(/#?(section|link|cit)\//g, '');
     hash = hash.replace(/#/g, '');
     if (hash) {
         return_val = jQuery("#" + hash + " h2").text().toLowerCase();
