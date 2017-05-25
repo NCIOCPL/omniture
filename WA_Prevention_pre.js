@@ -12,6 +12,11 @@ var page_URL = document.URL;
 if (page_URL.indexOf('dcp.cancer.gov') != -1) {    
     wa_production_url_match = 'dcp.cancer.gov';
 }
+else if (page_URL.indexOf('cpfp.cancer.gov') != -1) {
+    wa_channel = 'DCP - CPFP';
+    wa_search_function_name = 'DCP - CPFP - Search';
+    wa_production_url_match = 'cpfp.cancer.gov';
+}
 else if (page_URL.indexOf('glycomics.cancer.gov') != -1) {    
     wa_channel = 'DCP - Glycomics';
     wa_search_function_name = 'DCP - Glycomics - Search';
