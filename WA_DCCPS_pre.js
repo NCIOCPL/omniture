@@ -182,6 +182,13 @@ else if (page_URL.indexOf('crn.cancer.gov') != -1) {
 	wa_is_production_report_suite = true;
 	wa_p30 = 'HMO Cancer Research Network';
 }
+else if (page_URL.indexOf('epi.grants.cancer.gov') != -1) {      
+    wa_channel = 'DCCPS - EGRP'; 
+    wa_search_function_name = 'DCCPS - EGRP - Search'; 
+    wa_production_url_match = 'epi.grants.cancer.gov'; 
+    wa_is_production_report_suite = true; 
+    wa_p30 = 'Epidemiology Genomics Main';
+}
 else if (page_URL.indexOf('epi.grants.cancer.gov/blog') != -1) {	
 	wa_channel = 'DCCPS - EGRP';
 	wa_search_function_name = 'DCCPS - EGRP - Search';
