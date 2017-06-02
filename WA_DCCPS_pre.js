@@ -7,27 +7,22 @@ var wa_search_function_name = '';
 var wa_production_url_match = ''; 
 var wa_production_linkInternalFilters = 'javascript:,cancercontrol.cancer.gov/is,';
 wa_production_linkInternalFilters += 'ccplanet.cancer.gov,';
-wa_production_linkInternalFilters += 'cancercontrolplanet.org,';
+wa_production_linkInternalFilters += 'cancercontrolplanet.cancer.gov,';
 wa_production_linkInternalFilters += 'ccplanettraining.cancer.gov,';
 wa_production_linkInternalFilters += 'researchtoreality.cancer.gov,';
-wa_production_linkInternalFilters += 'appliedresearch.cancer.gov,';
-wa_production_linkInternalFilters += 'healthservices.cancer.gov,';
 wa_production_linkInternalFilters += 'outcomes.cancer.gov,';
-wa_production_linkInternalFilters += 'riskfactor.cancer.gov,';
 wa_production_linkInternalFilters += 'breastscreening.cancer.gov,';
 wa_production_linkInternalFilters += 'crn.cancer.gov,';
 wa_production_linkInternalFilters += 'appliedresearch.cancer.gov/icsn,';
 wa_production_linkInternalFilters += 'cancercontrol.cancer.gov/brp,';
 wa_production_linkInternalFilters += 'staffprofiles.cancer.gov/brp,';
 wa_production_linkInternalFilters += 'hints.cancer.gov,';
-wa_production_linkInternalFilters += 'secure.mmgct.com/hints-gem,';
 wa_production_linkInternalFilters += 'smokefree.gov,';
 wa_production_linkInternalFilters += 'women.smokefree.gov,';
 wa_production_linkInternalFilters += 'teen.smokefree.gov,';
 wa_production_linkInternalFilters += 'espanol.smokefree.gov,';
 wa_production_linkInternalFilters += 'meetings.smokefree.gov,';
 wa_production_linkInternalFilters += 'class.cancer.gov,';
-wa_production_linkInternalFilters += 'blog-epi.grants.cancer.gov,';
 wa_production_linkInternalFilters += 'epi.grants.cancer.gov,';
 wa_production_linkInternalFilters += 'li-gis.cancer.gov,';
 wa_production_linkInternalFilters += 'surveillance.cancer.gov,';
@@ -62,19 +57,12 @@ var wa_hier2 = "";
 var page_URL = document.URL.toLowerCase();
 
 
-if (page_URL.indexOf('appliedresearch.cancer.gov/icsn') != -1) {	
-	wa_channel = 'DCCPS - ARP';
-	wa_search_function_name = 'DCCPS - ARP - Search';
-	wa_production_url_match = 'appliedresearch.cancer.gov/icsn/';
+if (page_URL.indexOf('healthcaredelivery.cancer.gov/icsn') != -1) {	
+	wa_channel = 'DCCPS - HDRP';
+	wa_search_function_name = 'DCCPS - HDRP - Search';
+	wa_production_url_match = 'healthcaredelivery.cancer.gov/icsn/';
 	wa_is_production_report_suite = true;
 	wa_p30 = 'International Screening Network';
-}
-else if (page_URL.indexOf('appliedresearch.cancer.gov') != -1) {	
-	wa_channel = 'DCCPS - ARP';
-	wa_search_function_name = 'DCCPS - ARP - Search';
-	wa_production_url_match = 'appliedresearch.cancer.gov';
-	wa_is_production_report_suite = true;
-	wa_p30 = 'Applied Research Main';
 }
 else if (page_URL.indexOf('healthcaredelivery.cancer.gov') != -1) {	
 	wa_channel = 'DCCPS - HDRP';
@@ -133,10 +121,10 @@ else if (page_URL.indexOf('cancercontrol.cancer.gov') != -1) {
 	wa_is_production_report_suite = true;
 	wa_p30 = 'DCCPS OD Main';
 }
-else if (page_URL.indexOf('cancercontrolplanet.org') != -1) {	
+else if (page_URL.indexOf('cancercontrolplanet.cancer.gov') != -1) {	
 	wa_channel = 'DCCPS - IS';
 	wa_search_function_name = 'DCCPS - IS - Search';
-	wa_production_url_match = 'cancercontrolplanet.org';
+	wa_production_url_match = 'cancercontrolplanet.cancer.gov';
 	wa_is_production_report_suite = true;
 	wa_p30 = 'PLANET';
 	wa_p44 = 'CC PLANET International';
@@ -195,19 +183,12 @@ else if (page_URL.indexOf('crn.cancer.gov') != -1) {
 	wa_is_production_report_suite = true;
 	wa_p30 = 'HMO Cancer Research Network';
 }
-else if (page_URL.indexOf('blog-epi.grants.cancer.gov') != -1) {	
-	wa_channel = 'DCCPS - EGRP';
-	wa_search_function_name = 'DCCPS - EGRP - Search';
-	wa_production_url_match = 'epi.grants.cancer.gov';
-	wa_is_production_report_suite = true;
-	wa_p30 = 'Epidemiology Matters Blog';
-}
 else if (page_URL.indexOf('epi.grants.cancer.gov') != -1) {	
 	wa_channel = 'DCCPS - EGRP';
 	wa_search_function_name = 'DCCPS - EGRP - Search';
 	wa_production_url_match = 'epi.grants.cancer.gov';
 	wa_is_production_report_suite = true;
-	wa_p30 = 'Epidemiology Genomics Main';
+	wa_p30 = 'Epidemiology Matters Blog';
 }
 else if (page_URL.indexOf('espanol.smokefree.gov') != -1) {	
 	wa_channel = 'DCCPS - BRP';
@@ -230,13 +211,6 @@ else if (page_URL.indexOf('gis.cancer.gov') != -1) {
 	wa_production_url_match = 'gis.cancer.gov';
 	wa_is_production_report_suite = true;
 	wa_p30 = 'GIS';
-}
-else if (page_URL.indexOf('healthservices.cancer.gov') != -1) {	
-	wa_channel = 'DCCPS - HDRP';
-	wa_search_function_name = 'DCCPS - HDRP - Search';
-	wa_production_url_match = 'healthservices.cancer.gov';
-	wa_is_production_report_suite = true;
-	wa_p30 = 'Health Services Economics';
 }
 else if (page_URL.indexOf('hints.cancer.gov') != -1) {	
 	wa_channel = 'DCCPS - BRP';
@@ -289,27 +263,12 @@ else if (page_URL.indexOf('researchtoreality.cancer.gov') != -1) {
 	wa_p30 = 'R2R';
 	wa_p44 = 'R2R';
 }
-else if (page_URL.indexOf('riskfactor.cancer.gov') != -1) {	
-	wa_channel = 'DCCPS - HDRP';
-	wa_search_function_name = 'DCCPS - HDRP - Search';
-	wa_production_url_match = 'riskfactor.cancer.gov';
-	wa_is_production_report_suite = true;
-	wa_p30 = 'Risk Factor Monitoring Methods';
-}
 else if (page_URL.indexOf('sae.cancer.gov') != -1) {	
 	wa_channel = 'DCCPS - SRP';
 	wa_search_function_name = 'DCCPS - SRP - Search';
 	wa_production_url_match = 'sae.cancer.gov';
 	wa_is_production_report_suite = true;
     wa_p30 = 'Small Area Estimates';
-}
-else if (page_URL.indexOf('secure.mmgct.com/hints-gem') != -1) {	
-	wa_channel = 'DCCPS - BRP';
-	wa_search_function_name = 'DCCPS - BRP - Search';
-	wa_production_url_match = 'secure.mmgct.com/hints-gem';
-	wa_is_production_report_suite = true;
-	wa_p30 = 'HINTS';
-	wa_p44 = 'HINTS GEM';
 }
 else if (page_URL.indexOf('training.seer.cancer.gov') != -1) {	
 	wa_channel = 'DCCPS - SEER';
