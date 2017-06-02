@@ -13,7 +13,6 @@ wa_production_linkInternalFilters += 'researchtoreality.cancer.gov,';
 wa_production_linkInternalFilters += 'outcomes.cancer.gov,';
 wa_production_linkInternalFilters += 'breastscreening.cancer.gov,';
 wa_production_linkInternalFilters += 'crn.cancer.gov,';
-wa_production_linkInternalFilters += 'appliedresearch.cancer.gov/icsn,';
 wa_production_linkInternalFilters += 'cancercontrol.cancer.gov/brp,';
 wa_production_linkInternalFilters += 'staffprofiles.cancer.gov/brp,';
 wa_production_linkInternalFilters += 'hints.cancer.gov,';
@@ -183,7 +182,7 @@ else if (page_URL.indexOf('crn.cancer.gov') != -1) {
 	wa_is_production_report_suite = true;
 	wa_p30 = 'HMO Cancer Research Network';
 }
-else if (page_URL.indexOf('epi.grants.cancer.gov') != -1) {	
+else if (page_URL.indexOf('epi.grants.cancer.gov/blog') != -1) {	
 	wa_channel = 'DCCPS - EGRP';
 	wa_search_function_name = 'DCCPS - EGRP - Search';
 	wa_production_url_match = 'epi.grants.cancer.gov';
