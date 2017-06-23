@@ -20,7 +20,6 @@ var s_code=s.t();if(s_code)document.write(s_code);
 var NCIAnalytics = {
 
 	SiteSearch : function() {
-
 		var searchValue = '';
 		for(i=0; i< document.forms[0].elements.length; i++) {
 			if(document.forms[0].elements[i].type == "text")
@@ -36,6 +35,17 @@ var NCIAnalytics = {
 			s.events='event2';
 			s.tl(true,'o',wa_search_function_name);
 		}
+	},
+	
+	SiteSearchWithValue : function(sender, value) {
+		var s=s_gi(s_account); 
+		s.linkTrackVars='channel,prop14,eVar14,events'; 
+		s.linkTrackEvents='event2';
+		s.prop14=value;
+		s.eVar14=value;
+		s.channel=wa_channel;
+		s.events='event2';
+		s.tl(this,'o',wa_search_function_name);
 	},
 
 	DownloadLink : function(linkHref,linkName){
@@ -54,6 +64,30 @@ var NCIAnalytics = {
 		} 
 	},
 
+	CartStarted : function(item)  {
+		s.linkTrackVars='events,prop37,prop38';
+		s.linkTrackEvents='event19,event24';
+		s.events='event19,event24';
+		s.prop37='Order Button';
+		s.prop38=item;
+		s.tl(true,'o','CartStarted');
+	},
+	
+	CartCompleted : function()  {
+		s.linkTrackVars='events';
+		s.linkTrackEvents='event25';
+		s.events='event25';
+		s.tl(true,'o','CartCompleted');		
+	},
+	
+	PubsLinkTrack : function(value, url) {	
+		var s=s_gi(s_account); 		
+		s.linkTrackVars='events,prop37,prop38'; 
+		s.linkTrackEvents='event19';
+		s.prop37=value;
+		s.prop38=url;
+	},
+		
 	TrackDownloads : function() {
 
 		var myLinks = document.links;
@@ -93,17 +127,10 @@ var NCIAnalytics = {
 	},
 	
 	PageAnalytics : function() {
-		NCIAnalytics.GenericSiteSearch();
+		//NCIAnalytics.GenericSiteSearch();
 		NCIAnalytics.TrackDownloads();
 	}
 	
-};
-
-if (window.addEventListener) // W3C standard
-{
-  window.addEventListener('load', function(){NCIAnalytics.PageAnalytics();}, false); 
-} 
-else if (window.attachEvent) // Microsoft
-{
-  window.attachEvent('onload', function(){NCIAnalytics.PageAnalytics();});
 }
+
+/*window.onload = function(){NCIAnalytics.PageAnalytics();}*/
