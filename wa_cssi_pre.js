@@ -38,6 +38,11 @@ else if (page_URL.indexOf('physics.cancer.gov') != -1) {
     wa_search_function_name = 'CSSI - Physics - Search';
     wa_production_url_match = 'physics.cancer.gov';
 }
+else if (page_URL.indexOf('proteomics.cancer.gov') != -1) {
+    wa_channel = 'CSSI - Proteomics';
+    wa_search_function_name = 'CSSI - Proteomics - Search';
+    wa_production_url_match = 'proteomics.cancer.gov';
+}
 else {
     wa_channel = 'CSSI dev';
     wa_search_function_name = 'CSSI dev search';
