@@ -1,6 +1,6 @@
-document.write('<script type="text/javascript" src="//static.cancer.gov/webanalytics/WA_TTC_pre.js" ></script>');
+document.write('<script type="text/javascript" src="//static.cancer.gov/webanalytics/WA_RAT_pre.js"></script>');
 document.write('<script type="text/javascript" src="//static.cancer.gov/webanalytics/s_code.js" ></script>');
-document.write('<script type="text/javascript" src="//static.cancer.gov/webanalytics/WA_TTC_post.js" ></script>');
+document.write('<script type="text/javascript" src="//static.cancer.gov/webanalytics/WA_RAT_post.js"></script>');
 var s = document.createElement('script');
 s.type='text/javascript';
 s.id="_fed_an_ua_tag";
@@ -12,6 +12,6 @@ document.head.appendChild(s);
 // event available:
 /*
 <!-- **** NCI Web Analytics  - DO NOT ALTER **** -->
-<script type="text/javascript" src="//static.cancer.gov/webanalytics/WA_TTC_HTTPS_PageLoad.js"></script>
+<script type="text/javascript" src="//static.cancer.gov/webanalytics/WA_RAT_pageload.js"></script>
 <!-- **** End NCI Web Analytics Page **** -->
 */

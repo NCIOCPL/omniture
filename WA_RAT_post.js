@@ -1,14 +1,12 @@
 // Version 2.1
-s.linkInternalFilters = wa_linkInternalFilters;
+if (wa_is_production_report_suite)
+    // production 
+    s.linkInternalFilters = wa_production_linkInternalFilters;
+else 
+    // non-production
+    s.linkInternalFilters = wa_dev_linkInternalFilters;
+
 s.channel=wa_channel;
-
-if (wa_p30 != "")
-	s.prop30 = wa_p30;
-	
-if (wa_p44 != "")
-	s.prop44 = wa_p44;
-
-s.hier2= wa_channel + '|' + wa_p30 + '|' + wa_p44;
 
 s.events='event1';
 var s_code=s.t();if(s_code)document.write(s_code);
@@ -118,5 +116,6 @@ else if (window.attachEvent) // Microsoft
 {
   window.attachEvent('onload', function(){NCIAnalytics.PageAnalytics();});
 }
+
 
 
