@@ -173,7 +173,10 @@ s.usePlugins=true
 function s_doPlugins(s) {
 
     /* Set prop15 to either 'protoclsearchid' or 'PrintID' (depends on the page being loaded) */
-    s.prop15=s.eVar15= s.getQueryParam('protocolsearchid') ? s.getQueryParam('protocolsearchid') : s.getQueryParam('PrintID');
+	if(s.prop15 == null && s.eVar15 == null) 
+    {
+        s.prop15=s.eVar15= s.getQueryParam('protocolsearchid') ? s.getQueryParam('protocolsearchid') : s.getQueryParam('PrintID');
+    }
 
     /* Set the campagin value if there are any matching queries in the URL*/
     var sCampaign;
@@ -202,7 +205,7 @@ function s_doPlugins(s) {
 
     // retrieve urs values
     if(typeof NCIAnalytics !== 'undefined') {
-    	if(typeof NCIAnalytics.urs === 'function') {
+    	if(typeof NCIAnalytics.urs !== 'undefined') {
 			window.urs = NCIAnalytics.urs.get({
 				campaign: sCampaign,
 				referrer: document.referrer
@@ -380,20 +383,6 @@ function getViewPort() {
     return screen;
 }
 
-/* Track initial load of basic and advanced search pages */
-var path = location.pathname;
-function endsWith(str, suffix) {
-  return str.indexOf(suffix, str.length - suffix.length) !== -1;
-}
-if(endsWith(path,'/')) {
-  path = path.substring(0, path.length-1);
-}
-if(endsWith(path,'clinical-trials/search')) {
-  s.prop62 = s.eVar62 = 'Clinical Trials: Basic';
-}
-else if(endsWith(path,'clinical-trials/advanced-search')) {
-  s.prop62 = s.eVar62 = 'Clinical Trials: Advanced';
-}
 
 /************************** PLUGINS SECTION *************************/
 /* You may insert any plugins you wish to use here.                 */
