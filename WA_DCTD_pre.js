@@ -21,6 +21,11 @@ else if (page_URL.indexOf('imaging.cancer.gov') != -1) {
     wa_search_function_name = 'DCTD - Imaging Search';
     wa_production_url_match = 'imaging.cancer.gov';
 }
+else if (page_URL.indexOf('nciformulary.cancer.gov') != -1){
+    wa_channel = 'DCTD - Forumulary';
+    wa_search_function_name = 'DCTD - Formulary Search';
+    wa_production_url_match = 'nciformulary.cancer.gov';
+}
 else {	
     wa_channel = 'DCTD dev';
     wa_search_function_name = 'DCTD search dev';
