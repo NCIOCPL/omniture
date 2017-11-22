@@ -58,7 +58,6 @@ var NCIAnalytics = {
         var s = s_gi(s_account);
         s.linkTrackVars = 'channel,prop57,prop58,prop59,prop67,events';
         s.linkTrackEvents = 'event61';
-        s.prop5 = value;
         s.prop57 = title;
         s.prop58 = title;
         s.prop59 = type;
