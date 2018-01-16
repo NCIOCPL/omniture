@@ -16,7 +16,7 @@ if (document.URL.indexOf('www.cancer.gov') != -1 ||
 
 /*
  * Mapping of all WCMS reporting suites
- * Last update: 2017-02-06
+ * Last update: 2017-12-21
  */
 var AllSuites =
 {
@@ -98,7 +98,11 @@ var AllSuites =
     'ncicssi-strategicscientificinitiatives': {
     live: 'ncicssi-strategicscientificinitiatives',
         other: 'ncicssi-strategicscientificinitiatives-dev'
-    }    
+    },	
+	'ncienterprise': { 
+		live: 'ncienterprise', 
+		other: 'ncienterprise-dev' 
+	}
 };
 
 /*

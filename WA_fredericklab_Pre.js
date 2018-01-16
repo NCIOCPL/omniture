@@ -1,5 +1,5 @@
-var wa_production_report_suite = 'ncifrederick-ncifrederick';
-//var wa_dev_report_suite = 'ncifrederick-ncifrederick-dev';
+var wa_production_report_suite = 'ncifrederick-ncifrederick,ncienterprise';
+//var wa_dev_report_suite = 'ncifrederick-ncifrederick-dev,ncienterprise-dev';
 var wa_channel = 'Frederick National Lab';
 var wa_search_function_name = 'ctl00$ctl00$FnlHeader$ctl06';
 var wa_production_url_match = 'frederick.cancer.gov';

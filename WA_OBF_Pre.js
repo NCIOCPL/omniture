@@ -1,6 +1,6 @@
 // Version 2.1 TEMPLATE - tags <> in variables must be replaced with appropriate values
-var wa_production_report_suite = 'nciobf-budgetandfinance';
-var wa_dev_report_suite = 'nciobf-budgetandfinance-dev';
+var wa_production_report_suite = 'nciobf-budgetandfinance,ncienterprise';
+var wa_dev_report_suite = 'nciobf-budgetandfinance-dev,ncienterprise-dev';
 var wa_channel = 'OBF';
 var wa_search_function_name = 'OBF Search';
 var wa_production_url_match = 'budgettool.cancer.gov';

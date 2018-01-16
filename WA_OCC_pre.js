@@ -1,5 +1,5 @@
-var wa_production_report_suite = 'nciocc-cancercenters';
-var wa_dev_report_suite = 'nciocc-cancercenters-dev';
+var wa_production_report_suite = 'nciocc-cancercenters,ncienterprise';
+var wa_dev_report_suite = 'nciocc-cancercenters-dev,ncienterprise-dev';
 var wa_channel = 'OCC - Cancer Centers';
 var wa_search_function_name = 'OCC - Cancer Centers Search';
 var wa_production_url_match = 'cancercenters.cancer.gov';

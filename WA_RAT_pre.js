@@ -1,5 +1,5 @@
-var wa_production_report_suite = 'ncidceg-cancerepidemiologyandgenetics';
-var wa_dev_report_suite = 'ncidceg-cancerepidemiologyandgenetics-dev';
+var wa_production_report_suite = 'ncidceg-cancerepidemiologyandgenetics,ncienterprise';
+var wa_dev_report_suite = 'ncidceg-cancerepidemiologyandgenetics-dev,ncienterprise-dev';
 var wa_channel = '';
 var wa_search_function_name = 'OCE - Support Services - Search';
 var wa_production_url_match = 'analysistools.nci.nih.gov/';

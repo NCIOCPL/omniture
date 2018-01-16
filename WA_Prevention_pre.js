@@ -1,5 +1,5 @@
-var wa_production_report_suite = 'ncidcp-cancerprevention';
-var wa_dev_report_suite = 'ncidcp-cancerprevention-dev';
+var wa_production_report_suite = 'ncidcp-cancerprevention,ncienterprise';
+var wa_dev_report_suite = 'ncidcp-cancerprevention-dev,ncienterprise-dev';
 var wa_channel = 'DCP';
 var wa_search_function_name = 'DCP Search';
 var wa_production_url_match = '';

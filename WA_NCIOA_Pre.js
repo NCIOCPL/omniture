@@ -1,5 +1,5 @@
-var wa_production_report_suite = 'ncioa-acquisitions';
-var wa_dev_report_suite = 'ncioa-acquisitions-dev';
+var wa_production_report_suite = 'ncioa-acquisitions,ncienterprise';
+var wa_dev_report_suite = 'ncioa-acquisitions-dev,ncienterprise-dev';
 var wa_channel = '';
 var wa_search_function_name = 'NCI OA - Search';
 var wa_production_url_match = 'ncioa.cancer.gov';

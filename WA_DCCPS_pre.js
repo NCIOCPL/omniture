@@ -1,7 +1,7 @@
 // Version 2.1
 // Last updated: 03-20-2017
-var wa_production_report_suite = 'ncidccps-cancercontrolpopulationsciences';
-var wa_dev_report_suite = 'ncidccps-cancercontrolpopulationsci-dev';
+var wa_production_report_suite = 'ncidccps-cancercontrolpopulationsciences,ncienterprise';
+var wa_dev_report_suite = 'ncidccps-cancercontrolpopulationsci-dev,ncienterprise-dev';
 var wa_channel = ''; 
 var wa_search_function_name = ''; 
 var wa_production_url_match = ''; 
