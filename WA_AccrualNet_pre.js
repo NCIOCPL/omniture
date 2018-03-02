@@ -1,5 +1,5 @@
-﻿var wa_production_report_suite = 'nciglobal,ncienglish-all,nciclinicaltrials';
-var wa_dev_report_suite = 'ncidev,ncienglish-all-dev,nciclinicaltrials-dev';
+﻿var wa_production_report_suite = 'nciglobal,ncienglish-all,nciclinicaltrials,ncienterprise';
+var wa_dev_report_suite = 'ncidev,ncienglish-all-dev,nciclinicaltrials-dev,ncienterprise-dev';
 var wa_channel = 'AccrualNet';
 var wa_search_function_name = 'AccrualNet Search';
 var wa_production_url_match = 'accrualnet.cancer.gov';

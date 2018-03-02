@@ -1,8 +1,8 @@
 /*
 * Set Web Analytics variables for for CSSI sites
 */
-var wa_production_report_suite = 'ncicssi-strategicscientificinitiatives';
-var wa_dev_report_suite = 'ncicssi-strategicscientificinitiativ-dev';
+var wa_production_report_suite = 'ncicssi-strategicscientificinitiatives,ncienterprise';
+var wa_dev_report_suite = 'ncicssi-strategicscientificinitiativ-dev,ncienterprise-dev';
 var wa_channel = '';
 var wa_search_function_name = '';
 var wa_production_url_match = '';

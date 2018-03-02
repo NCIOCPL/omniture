@@ -1,5 +1,5 @@
-﻿var wa_production_report_suite = 'nciglobal';
-var wa_dev_report_suite = 'ncidev';
+﻿var wa_production_report_suite = 'nciglobal,ncienterprise';
+var wa_dev_report_suite = 'ncidev,ncienterprise-dev';
 var wa_channel = 'Visuals Online';
 var wa_search_function_name = 'Visuals Online Search';
 var wa_production_url_match = 'visualsonline.cancer.gov';

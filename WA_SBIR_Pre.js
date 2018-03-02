@@ -1,5 +1,5 @@
-var wa_production_report_suite = 'nciod-nciofficeofthedirector';
-var wa_dev_report_suite = 'nciod-nciofficeofthedirector-dev';
+var wa_production_report_suite = 'nciod-nciofficeofthedirector,ncienterprise';
+var wa_dev_report_suite = 'nciod-nciofficeofthedirector-dev,ncienterprise-dev';
 var wa_channel = 'OD - SBIR';
 var wa_search_function_name = 'search';
 var wa_production_url_match = 'sbir.cancer.gov';

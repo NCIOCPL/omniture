@@ -1,7 +1,7 @@
 
 // Version 2.1 TEMPLATE - tags <> in variables must be replaced with appropreate values
-var wa_production_report_suite = 'ncioce-communicationsandeducation';
-var wa_dev_report_suite = 'ncioce-communicationsandeducation-dev';
+var wa_production_report_suite = 'ncioce-communicationsandeducation,ncienterprise';
+var wa_dev_report_suite = 'ncioce-communicationsandeducation-dev,ncienterprise-dev';
 var wa_channel = 'OCE - Gut Check';
 var wa_search_function_name = 'search';
 var wa_production_url_match = 'gutcheck.cancer.gov';

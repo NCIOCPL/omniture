@@ -1,5 +1,5 @@
-var wa_production_report_suite = 'ncioce-communicationsandeducation';
-var wa_dev_report_suite = 'ncioce-communicationsandeducation-dev';
+var wa_production_report_suite = 'ncioce-communicationsandeducation,ncienterprise';
+var wa_dev_report_suite = 'ncioce-communicationsandeducation-dev,ncienterprise-dev';
 var wa_channel = 'OCE - Support Services ';
 var wa_search_function_name = 'OCE - Support Services - Search';
 var wa_production_url_match = 'supportorgs.cancer.gov';

@@ -1,8 +1,8 @@
 ﻿/*
 * Set Web Analytics variables for for CBIIT sites
 */
-var wa_production_report_suite = 'ncicbiit-bioinformaticsinformationtech';
-var wa_dev_report_suite = 'ncicbiit-bioinformaticsinfomattech-dev';
+var wa_production_report_suite = 'ncicbiit-bioinformaticsinformationtech,ncienterprise';
+var wa_dev_report_suite = 'ncicbiit-bioinformaticsinfomattech-dev,ncienterprise-dev';
 var wa_channel = '';
 var wa_search_function_name = '';
 var wa_production_url_match = '';

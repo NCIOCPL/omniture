@@ -1,8 +1,8 @@
 /*
 * Set Web Analytics variables for for GDC sites
 */
-var wa_production_report_suite = 'ncidctd-cancertreatmentanddiagnosis';
-var wa_dev_report_suite = 'ncidctd-cancertreatmentdiagnosis-dev';
+var wa_production_report_suite = 'ncidctd-cancertreatmentanddiagnosis,ncienterprise';
+var wa_dev_report_suite = 'ncidctd-cancertreatmentdiagnosis-dev,ncienterprise-dev';
 var wa_channel = '';
 var wa_search_function_name = '';
 var wa_production_url_match = '';
