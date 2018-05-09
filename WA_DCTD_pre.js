@@ -26,6 +26,36 @@ else if (page_URL.indexOf('nciformulary.cancer.gov') != -1){
     wa_search_function_name = 'DCTD - Formulary Search';
     wa_production_url_match = 'nciformulary.cancer.gov';
 }
+else if (page_URL.indexOf('cdp.cancer.gov') != -1){
+    wa_channel = 'DCTD - CDP';
+    wa_search_function_name = 'DCTD - CDP Search';
+    wa_production_url_match = 'cdp.cancer.gov';
+}
+else if (page_URL.indexOf('ctep.cancer.gov') != -1){
+    wa_channel = 'DCTD - CTEP';
+    wa_search_function_name = 'DCTD - CTEP Search';
+    wa_production_url_match = 'ctep.cancer.gov';
+}
+else if (page_URL.indexOf('dtp.cancer.gov') != -1){
+    wa_channel = 'DCTD - DTP';
+    wa_search_function_name = 'DCTD - DTP Search';
+    wa_production_url_match = 'dtp.cancer.gov';
+}
+else if (page_URL.indexOf('rrp.cancer.gov') != -1){
+    wa_channel = 'DCTD - RRP';
+    wa_search_function_name = 'DCTD - RRP Search';
+    wa_production_url_match = 'rrp.cancer.gov';
+}
+else if (page_URL.indexOf('cam.cancer.gov') != -1){
+    wa_channel = 'DCTD - CAM';
+    wa_search_function_name = 'DCTD - CAM Search';
+    wa_production_url_match = 'cam.cancer.gov';
+}
+else if (page_URL.indexOf('dtc.cancer.gov') != -1){
+    wa_channel = 'DCTD - DTC';
+    wa_search_function_name = 'DCTD - DTC Search';
+    wa_production_url_match = 'dtc.cancer.gov';
+}
 else {	
     wa_channel = 'DCTD dev';
     wa_search_function_name = 'DCTD search dev';
