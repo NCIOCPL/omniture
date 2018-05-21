@@ -8,7 +8,7 @@ This folder contains everything needed to deploy analytics files to a staticxxx.
 4. From https://github.com/NCIOCPL/web-analytics/tree/master/tools, copy __AnalyticsDeploy.bat__ and __AnalyticsDeploy.ps1__ to the deployment folder root.
 5. Upload the deployment folder to the network drive or some other accessible location for deployment.
 6. Copy the deployment folder to the target machine.
-7. On the target machine, open the deployment folder and double-click __AnalyticsDeploy.bat__ to kick off the PowerShell script and deploy the analytics code.
+7. As an administrator on the target machine, open the deployment folder and double-click __AnalyticsDeploy.bat__ to kick off the PowerShell script and deploy the analytics code.
 
 ## Powershell script ##
 The Powershell script does the following:
