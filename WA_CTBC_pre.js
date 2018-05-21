@@ -1,5 +1,5 @@
 var wa_production_report_suite = 'nciglobal,ncienglish-all,nciclinicaltrials,ncienterprise';
-var wa_dev_report_suite = 'ncidev,ncienglish-all-dev,nciclinicaltrials-dev,ncienterprise-dev';
+var wa_dev_report_suite = 'ncidevelopment,ncienglish-all-dev,nciclinicaltrials-dev,ncienterprise-dev';
 var wa_channel = 'Clinical Trials Basics Course';
 var wa_search_function_name = 'Clinical Trials Basics Course - Search';
 var wa_production_url_match = 'training.cancer.gov';
