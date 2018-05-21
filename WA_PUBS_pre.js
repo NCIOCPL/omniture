@@ -1,5 +1,5 @@
 var wa_production_report_suite = 'nciglobal,ncienterprise';
-var wa_dev_report_suite = 'ncidev,ncienterprise-dev';
+var wa_dev_report_suite = 'ncidevelopment,ncienterprise-dev';
 var wa_channel = 'Pubs Locator';
 var wa_search_function_name = 'Pubs Locator - Search';
 var wa_production_url_match = 'pubs.cancer.gov';
