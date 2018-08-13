@@ -375,6 +375,8 @@ function getViewPort() {
     return screen;
 }
 
+/* Get the pathname */
+var path = location.pathname;
 
 /************************** PLUGINS SECTION *************************/
 /* You may insert any plugins you wish to use here.                 */
