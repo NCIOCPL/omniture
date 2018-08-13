@@ -377,6 +377,12 @@ function getViewPort() {
 
 /* Get the pathname */
 var path = location.pathname;
+function endsWith(str, suffix) {
+  return str.indexOf(suffix, str.length - suffix.length) !== -1;
+}
+if(endsWith(path,'/')) {
+  path = path.substring(0, path.length-1);
+}
 
 /************************** PLUGINS SECTION *************************/
 /* You may insert any plugins you wish to use here.                 */
