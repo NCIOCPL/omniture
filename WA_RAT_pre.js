@@ -15,10 +15,10 @@ if (page_URL.indexOf('analysistools.nci.nih.gov/melanomarisktool') != -1) {
 	wa_production_url_match = 'analysistools.nci.nih.gov/melanomarisktool';
 	wa_is_production_report_suite = true;
 }
-else if (page_URL.indexOf('analysistools.nci.nih.gov/bcrisktool') != -1) {	
+else if (page_URL.indexOf('bcrisktool.cancer.gov') != -1) {	
 	wa_channel = 'DCEG - BCRAT';
 	wa_search_function_name = 'DCEG - BCRAT Search';
-	wa_production_url_match = 'analysistools.nci.nih.gov/bcrisktool';
+	wa_production_url_match = 'bcrisktool.cancer.gov';
 	wa_is_production_report_suite = true;
 }
 else if (page_URL.indexOf('analysistools.nci.nih.gov/colorectalcancerrisk') != -1) {	
