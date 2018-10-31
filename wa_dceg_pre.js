@@ -147,6 +147,60 @@ else if (page_URL.indexOf('transplantmatch.cancer.gov') != -1) {
 	wa_production_url_match = 'transplantmatch.cancer.gov';
 	wa_is_production_report_suite = true;
 }
+else if (page_URL.indexOf('analysistools.nci.nih.gov/biomarkerTools/') != -1) {	
+	wa_channel = 'DCEG - Biomarker Tools';
+	wa_search_function_name = 'DCEG-Biomarker Tools - Search';
+	wa_production_url_match = 'analysistools.nci.nih.gov/biomarkerTools/';
+	wa_is_production_report_suite = true;
+}
+else if (page_URL.indexOf('analysistools.nci.nih.gov/apc/') != -1) {	
+	wa_channel = 'DCEG - APC';
+	wa_search_function_name = 'DCEG - APC - Search';
+	wa_production_url_match = 'analysistools.nci.nih.gov/apc/';
+	wa_is_production_report_suite = true;
+}
+else if (page_URL.indexOf('analysistools.nci.nih.gov/LDlink/') != -1) {	
+	wa_channel = 'DCEG - LD Link';
+	wa_search_function_name = 'DCEG - LD Link - Search';
+	wa_production_url_match = 'analysistools.nci.nih.gov/LDlink/';
+	wa_is_production_report_suite = true;
+}
+else if (page_URL.indexOf('soccer.nci.nih.gov/soccer/') != -1) {	
+	wa_channel = 'DCEG - Soccer';
+	wa_search_function_name = 'DCEG - Soccer - Search';
+	wa_production_url_match = '	soccer.nci.nih.gov/soccer/';
+	wa_is_production_report_suite = true;
+}
+else if (page_URL.indexOf('analysistools.nci.nih.gov/lungCancerScreening') != -1) {	
+	wa_channel = 'DCEG - Lung Screening';
+	wa_search_function_name = 'DCEG - Lung Screening - Search';
+	wa_production_url_match = 'analysistools.nci.nih.gov/lungCancerScreening';
+	wa_is_production_report_suite = true;
+}
+else if (page_URL.indexOf('analysistools.nci.nih.gov/lungCancerRiskAssessment') != -1) {	
+	wa_channel = 'DCEG - Lung Risk Assessment';
+	wa_search_function_name = 'DCEG - Lung Risk Assessment - Search';
+	wa_production_url_match = 'analysistools.nci.nih.gov/lungCancerRiskAssessment';
+	wa_is_production_report_suite = true;
+}
+else if (page_URL.indexOf('analysistools.nci.nih.gov/pathway') != -1) {	
+	wa_channel = 'DCEG - Pathway';
+	wa_search_function_name = 'DCEG - Pathway - Search';
+	wa_production_url_match = 'analysistools.nci.nih.gov/pathway';
+	wa_is_production_report_suite = true;
+}
+else if (page_URL.indexOf('ncidose.cancer.gov/') != -1) {	
+	wa_channel = 'DCEG - Dose';
+	wa_search_function_name = 'DCEG - Dose - Search';
+	wa_production_url_match = 'ncidose.cancer.gov/';
+	wa_is_production_report_suite = true;
+}
+else if (page_URL.indexOf('authorarranger.nci.nih.gov') != -1) {	
+	wa_channel = 'DCEG - AuthorArranger';
+	wa_search_function_name = 'DCEG - AuthorArranger - Search';
+	wa_production_url_match = 'authorarranger.nci.nih.gov';
+	wa_is_production_report_suite = true;
+}
 else {
 	wa_channel = 'DCEG - Development';
 	wa_search_function_name = 'DCEG - Development - Search';

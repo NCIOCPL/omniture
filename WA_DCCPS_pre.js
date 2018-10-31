@@ -1,5 +1,5 @@
-// Version 2.1
-// Last updated: 03-20-2017
+// Version 2.2
+// Last updated: 09-7-2018
 var wa_production_report_suite = 'ncidccps-cancercontrolpopulationsciences,ncienterprise';
 var wa_dev_report_suite = 'ncidccps-cancercontrolpopulationsci-dev,ncienterprise-dev';
 var wa_channel = ''; 
@@ -127,6 +127,14 @@ else if (page_URL.indexOf('cancercontrolplanet.cancer.gov') != -1) {
 	wa_is_production_report_suite = true;
 	wa_p30 = 'PLANET';
 	wa_p44 = 'CC PLANET International';
+}
+else if (page_URL.indexOf('cyberseminar.cancercontrolplanet.org') != -1) {	
+	wa_channel = 'DCCPS - IS';
+	wa_search_function_name = 'DCCPS - IS - Search';
+	wa_production_url_match = 'cyberseminar.cancercontrolplanet.org';
+	wa_is_production_report_suite = true;
+	wa_p30 = 'PLANET';
+	wa_p44 = 'CC PLANET Cyber Seminar';
 }
 else if (page_URL.indexOf('ccplanet.cancer.gov') != -1) {	
 	wa_channel = 'DCCPS - IS';
