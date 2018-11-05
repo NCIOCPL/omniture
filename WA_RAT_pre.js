@@ -9,10 +9,10 @@ var wa_is_production_report_suite = false;
 var page_URL = document.URL.toLowerCase();
 
 
-if (page_URL.indexOf('analysistools.nci.nih.gov/melanomarisktool') != -1) {	
+if (page_URL.indexOf('mrisktool.cancer.gov') != -1) {	
 	wa_channel = 'DCEG - MRAT';
 	wa_search_function_name = 'DCEG - MRAT Search';
-	wa_production_url_match = 'analysistools.nci.nih.gov/melanomarisktool';
+	wa_production_url_match = 'mrisktool.cancer.gov';
 	wa_is_production_report_suite = true;
 }
 else if (page_URL.indexOf('bcrisktool.cancer.gov') != -1) {	
@@ -21,10 +21,10 @@ else if (page_URL.indexOf('bcrisktool.cancer.gov') != -1) {
 	wa_production_url_match = 'bcrisktool.cancer.gov';
 	wa_is_production_report_suite = true;
 }
-else if (page_URL.indexOf('analysistools.nci.nih.gov/colorectalcancerrisk') != -1) {	
-	wa_channel = '	DCEG - CCRAT';
-	wa_search_function_name = '	DCEG - CCRAT Search';
-	wa_production_url_match = 'analysistools.nci.nih.gov/colorectalcancerrisk';
+else if (page_URL.indexOf('ccrisktool.cancer.gov') != -1) {	
+	wa_channel = 'DCEG - CCRAT';
+	wa_search_function_name = 'DCEG - CCRAT Search';
+	wa_production_url_match = 'ccrisktool.cancer.gov';
 	wa_is_production_report_suite = true;
 }
 else if (page_URL.indexOf('analysistools.nci.nih.gov/biomarkertools') != -1) {	
