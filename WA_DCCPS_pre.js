@@ -21,6 +21,7 @@ wa_production_linkInternalFilters += 'women.smokefree.gov,';
 wa_production_linkInternalFilters += 'teen.smokefree.gov,';
 wa_production_linkInternalFilters += 'espanol.smokefree.gov,';
 wa_production_linkInternalFilters += 'meetings.smokefree.gov,';
+wa_production_linkInternalFilters += 'veterans.smokefree.gov,';
 wa_production_linkInternalFilters += 'class.cancer.gov,';
 wa_production_linkInternalFilters += 'epi.grants.cancer.gov,';
 wa_production_linkInternalFilters += 'li-gis.cancer.gov,';
@@ -254,6 +255,14 @@ else if (page_URL.indexOf('meetings.smokefree.gov') != -1) {
 	wa_is_production_report_suite = true;
 	wa_p30 = 'Smokefree';
 	wa_p44 = 'Smokefree Meetings';
+}
+else if (page_URL.indexOf('veterans.smokefree.gov') != -1) {	
+	wa_channel = 'DCCPS - BRP'; 
+	wa_search_function_name = 'DCCPS - BRP - Search'; 
+	wa_production_url_match = 'veterans.smokefree.gov'; 
+	wa_is_production_report_suite = true; 
+	wa_p30 = 'Smokefree'; 
+	wa_p44 = 'Smokefree Veterans'; 
 }
 else if (page_URL.indexOf('progressreport.cancer.gov') != -1) {	
 	wa_channel = 'DCCPS - OD';
