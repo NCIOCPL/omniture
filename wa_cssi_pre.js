@@ -43,6 +43,11 @@ else if (page_URL.indexOf('proteomics.cancer.gov') != -1) {
     wa_search_function_name = 'CSSI - Proteomics - Search';
     wa_production_url_match = 'proteomics.cancer.gov';
 }
+else if (page_URL.indexOf('fundedresearch.cancer.gov') != -1) {
+    wa_channel = 'CSSI - Funded Research';
+    wa_search_function_name = 'CSSI - Funded Research- Search';
+    wa_production_url_match = 'fundedresearch.cancer.gov';
+}
 else {
     wa_channel = 'CSSI dev';
     wa_search_function_name = 'CSSI dev search';
