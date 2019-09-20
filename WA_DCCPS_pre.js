@@ -48,6 +48,7 @@ wa_production_linkInternalFilters += 'ratecalc.cancer.gov,';
 wa_production_linkInternalFilters += 'rtips.cancer.gov,';
 wa_production_linkInternalFilters += 'sbir-cancercontrol.cancer.gov,';
 wa_production_linkInternalFilters += 'survivorship.cancer.gov';
+wa_production_linkInternalFilters += 'cessationtoolkit.cancer.gov';
 
 var wa_dev_linkInternalFilters = 'javascript:'; 
 var wa_is_production_report_suite = false;
@@ -394,6 +395,13 @@ else if (page_URL.indexOf('survivorship.cancer.gov') != -1) {
 	wa_production_url_match = 'survivorship.cancer.gov';
 	wa_is_production_report_suite = true;
 	wa_p30 = 'Survivorship';
+}
+else if (page_URL.indexOf('cessationtoolkit.cancer.gov') != -1) { 
+	wa_channel = 'DCCPS - Cessation Toolkit'; 
+	wa_search_function_name = 'DCCPS - Cessation Toolkit - Search';
+	wa_production_url_match = 'cessationtoolkit.cancer.gov';
+	wa_is_production_report_suite = true;
+	wa_p30 = 'Cessation Toolkit';
 }
 else {
 	wa_channel = 'DCCPS - Development';
