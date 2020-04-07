@@ -518,12 +518,9 @@ changes to how your visitor data is collected.  Changes should only be
 made when instructed to do so by your account manager.*/
 s.visitorNamespace="nci";
 
-// Send tagging requests to correct server based on protocol
-if(document.URL.indexOf("https://") >= 0)
-    s.trackingServer="nci.122.2o7.net";
-else
-    s.trackingServer="metrics.cancer.gov";
-    s.dc="122";
+// Send tagging requests to correct tracking server
+s.trackingServer="metrics.cancer.gov";
+s.dc="122";
 
 
 /*
