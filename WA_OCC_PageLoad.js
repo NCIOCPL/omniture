@@ -2,6 +2,7 @@
 document.write('<script type="text/javascript" src="//static.cancer.gov/webanalytics/WA_OCC_pre.js" ></script>');
 document.write('<script type="text/javascript" src="//static.cancer.gov/webanalytics/s_code.js" ></script>');
 document.write('<script type="text/javascript" src="//static.cancer.gov/webanalytics/WA_OCC_post.js" ></script>');
+document.write('<script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0076/4407.js" async="async" ></script>');
 var s = document.createElement('script');
 s.type='text/javascript';
 s.id="_fed_an_ua_tag";
